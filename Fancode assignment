@@ -1,0 +1,63 @@
+Fancode assignment 
+
+
+1. http://localhost:3000/tour/matches?name=Indian%20Premier%20League,%202023 : returns 
+
+
+Endpoint /tour/matches returns all the matches for a given tour name.
+The endpoint latency increases linearly with the number of tours. Modify the endpoint to increase the performance.
+
+mydb.tours
+
+
+CREATE INDEX idx_tour_name
+ON mydb.tours (name);
+
+docker exec -it js-assignment-master-db-1 /bin/bash : goes into docker bash
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+docker exec -it 0dc7dd8a40d5 mysql -u root -p
+
+docker exec -it 0dc7dd8a40d5 mysql -u root -p
+
+docker run --name js-assignment-master-db-1 -e MYSQL_ROOT_PASSWORD="" -p 3306:3306 -d mysql:latest
+
+
+mysql -u root -p mydb < ./docker-entrypoint-initdb.d/base.sql
+
+
+docker cp your_file.sql mysql_container:/path/in/container/your_file.sql
+
+docker exec -i js-assignment-master-db-1 -u root -p  mydb < /docker-entrypoint-initdb.d/base.sql
+
+
+docker exec -it js-assignment-master-db-1 bash
+
+mysql -u mysql -p mydb
+
+DESCRIBE your_table_name;
+-- or
+SHOW COLUMNS FROM your_table_name;
+
+
+host: 'db',
+      port: 3306,
+      username: 'myuser',
+      password: 'mypassword',
+      database: 'mydb'
+
+
+mysql -h 127.0.0.1 -P 3306 -u myuser -p mypassword
+
+mysql -h 127.0.0.1 -P 3306 -u myuser -p
+
+
+
+select s.name as sportName, t.name as tourName, m.name as matchName, m.id as matchId, m.startTime as startTime, m.format as format from matches m inner join tours t on m.tourId = t.id inner join sports s on t.sportId = s.id;
+
+
+
+
+ 
